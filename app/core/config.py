@@ -1,7 +1,4 @@
-import secrets
-
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -9,6 +6,16 @@ class Settings(BaseSettings):
         env_ignore_empty=True,
         extra="ignore",
     )
+
+    DB_HOST: str
+    DB_USER: str
+    DB_PASS: str
+    DB_DATABASE: str
+
+    UTC: int = 0 # Default to UTC+0
+    TIMEOUT: float = 2  # Default timeout in seconds
+    TEST: bool = True  # Default to not in test mode
+
     LOGGING_CONFIG: dict = {
         "version": 1,
         "disable_existing_loggers": False,

@@ -18,8 +18,8 @@ def init_gpio():
     GPIO.setup(settings.BUZZER_PIN, GPIO.OUT)
 
 
-last_temp = None
-last_hum = None
+#last_temp = None
+#last_hum = None
 #last_status = 0
 
 
@@ -31,12 +31,12 @@ def iter_climate():
         humidity = random.uniform(30.0, 70.0)  # Mock humidity data
         temperature = random.uniform(20.0, 30.0)
     if humidity is not None and temperature is not None:
-        temp = round(temperature, 1)
-        hum = round(humidity, 1)
-        if last_temp == temp or last_hum == hum:
-            return
-        last_temp = temp
-        last_hum = hum
+        #temp = round(temperature, 1)
+        #hum = round(humidity, 1)
+       # if last_temp == temp or last_hum == hum:
+            #return
+        #last_temp = temp
+        #last_hum = hum
         yield {"temperature": temperature, "humidity": humidity}
     else:
         yield {"error": "Failed to retrieve data from the sensor"}

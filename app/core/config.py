@@ -19,7 +19,7 @@ class Settings(BaseSettings):
 
     UTC: int = 0 # Default to UTC+0
     TIMEOUT: float = 2  # Default timeout in seconds
-    TEST: bool = True  # Default to not in test mode
+    TEST: bool = False  # Default to not in test mode
 
     LOGGING_CONFIG: dict = {
         "version": 1,

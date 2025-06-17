@@ -11,6 +11,11 @@ class Settings(BaseSettings):
     DB_USER: str
     DB_PASS: str
     DB_DATABASE: str
+    
+    # Pins
+    CLIMATE_PIN: int = 4
+    MOISTURE_PIN: int = 22
+    BUZZER_PIN: int = 17
 
     UTC: int = 0 # Default to UTC+0
     TIMEOUT: float = 2  # Default timeout in seconds
